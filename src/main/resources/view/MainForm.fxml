@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="pane" prefHeight="449.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qrandbarcode.controller.MainFormController">
+   <children>
+      <ImageView fitHeight="449.0" fitWidth="797.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bg.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="138.0" layoutY="244.0" prefHeight="34.0" prefWidth="502.0" text="Choose QR or Barcode: Select whether you want to generate a QR code or a barcode." textAlignment="CENTER" wrapText="true" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="138.0" layoutY="283.0" prefHeight="50.0" prefWidth="502.0" text="Enter Your Text: In the provided field, enter the text you want to encode into the QR code or barcode. This could be a URL, a piece of text, a number, or anything you want to represent." textAlignment="CENTER" wrapText="true" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="138.0" layoutY="202.0" prefHeight="34.0" prefWidth="502.0" text="Instructions" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="242.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnGenerateCodeOnAction" prefHeight="28.0" prefWidth="121.0" style="-fx-background-color: #d6cadd; -fx-background-radius: 20px;" text="Generate Code">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="407.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnScanCodeOnAction" prefHeight="28.0" prefWidth="121.0" style="-fx-background-color: #d6cadd; -fx-background-radius: 20px;" text="Scan Code">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
