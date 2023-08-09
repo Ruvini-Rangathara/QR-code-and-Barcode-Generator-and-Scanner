@@ -29,15 +29,15 @@ public class MainFormController {
 
     @FXML
     void btnScanCodeOnAction(ActionEvent event) {
-//        pane.getChildren().clear();
-//        Stage stage = (Stage) pane.getScene().getWindow();
-//        try {
-//            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/ScanForm.fxml"))));
-//            stage.setTitle("Scan Code");
-//            stage.show();
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
+        pane.getChildren().clear();
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/ScanForm.fxml"))));
+            stage.setTitle("Scan Code");
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

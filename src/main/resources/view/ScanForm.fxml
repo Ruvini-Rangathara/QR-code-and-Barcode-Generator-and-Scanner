@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="pane" prefHeight="449.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qrandbarcode.controller.ScanFormController">
+   <children>
+      <ImageView fitHeight="449.0" fitWidth="797.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bg3.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="74.0" layoutY="103.0" prefHeight="303.0" prefWidth="669.0" style="-fx-background-color: #dcd0ff;" />
+      <Button fx:id="btnScanCode" layoutX="129.0" layoutY="334.0" mnemonicParsing="false" onAction="#btnScanCodeOnAction" prefHeight="28.0" prefWidth="121.0" style="-fx-background-color: #dda0dd; -fx-background-radius: 20px;" text="Scan Code">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="477.0" layoutY="137.0" text="Your code will generate here" />
+      <Button fx:id="btnExit" layoutX="38.0" layoutY="415.0" mnemonicParsing="false" onAction="#btnExitOnAction" prefHeight="24.0" prefWidth="53.0" style="-fx-background-color: #898a74; -fx-background-radius: 10px;" text="Exit" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
