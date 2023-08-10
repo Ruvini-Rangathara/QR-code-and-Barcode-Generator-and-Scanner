@@ -9,6 +9,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -26,8 +27,10 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class GeneratorFormController {
+public class GeneratorFormController implements Initializable {
 
     public AnchorPane qrImgPane;
     @FXML
@@ -58,6 +61,11 @@ public class GeneratorFormController {
     Image fxImageBarCode;
 
     ImageView imageView;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 
     @FXML
     void btnExitOnAction(ActionEvent event) {
@@ -126,6 +134,7 @@ public class GeneratorFormController {
     }
 
     private void generateQRCode() {
+
         String textToEncode = txtEnter.getText(); // Get the text from the TextArea
         int width = 200;
         int height = 200;
@@ -158,6 +167,11 @@ public class GeneratorFormController {
 
             if (fileToSave != null) {
                 try {
+                    // Ensure the selected file has .png extension
+                    if (!fileToSave.getName().toLowerCase().endsWith(".png")) {
+                        fileToSave = new File(fileToSave.getAbsolutePath() + ".png");
+                    }
+
                     ImageIO.write(SwingFXUtils.fromFXImage(fxImageBarCode, null), "png", fileToSave);
 
                     // Show a success message
@@ -179,7 +193,6 @@ public class GeneratorFormController {
         }
     }
 
-
     private void saveQRCode() {
         if (generatedCodeImage != null) {
             FileChooser fileChooser = new FileChooser();
@@ -189,6 +202,11 @@ public class GeneratorFormController {
 
             if (fileToSave != null) {
                 try {
+                    // Ensure the selected file has .png extension
+                    if (!fileToSave.getName().toLowerCase().endsWith(".png")) {
+                        fileToSave = new File(fileToSave.getAbsolutePath() + ".png");
+                    }
+
                     ImageIO.write(SwingFXUtils.fromFXImage(generatedCodeImage, null), "png", fileToSave);
 
                     // Show a success message
@@ -208,5 +226,6 @@ public class GeneratorFormController {
             }
         }
     }
+
 
 }
