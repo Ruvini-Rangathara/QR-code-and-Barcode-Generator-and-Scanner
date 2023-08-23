@@ -1,8 +1,12 @@
 package com.example.qrandbarcode.controller;
 
-import com.google.zxing.*;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.NotFoundException;
+import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,19 +15,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.scene.image.ImageView;
-import javafx.embed.swing.SwingFXUtils;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.EnumMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ScanFormController implements Initializable {
@@ -73,26 +73,6 @@ public class ScanFormController implements Initializable {
 
         btnScanCode.setDisable(true);
     }
-
-//    @FXML
-//    void btnOpenCodeOnAction(ActionEvent event) {
-//        FileChooser fileChooser = new FileChooser();
-//        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif", "*.bmp"));
-//
-//        File selectedFile = fileChooser.showOpenDialog(pane.getScene().getWindow());
-//        if (selectedFile != null) {
-//            try {
-//                Image image = new Image(selectedFile.toURI().toString());
-//                imgCode.setImage(image);
-//                imgCode.setPreserveRatio(true); // Preserve the image aspect ratio
-//                lblDecode.setText("");
-//                btnScanCode.setDisable(false); // Enable the decoding button
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                lblDecode.setText("Error loading image.");
-//            }
-//        }
-//    }
 
 
     @FXML
